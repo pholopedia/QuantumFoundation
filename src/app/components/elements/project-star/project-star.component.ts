@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProjectStarComponent implements OnInit {
 
-  title: string = "HolopediaLi";
+  title: string = "Quantum Foundation";
   description: string;
   defaultDescription: string = `HoloMedicine
   <br> HoloArt HoloApplications HoloAlgorithm
@@ -63,9 +63,9 @@ export class ProjectStarComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.currentStep = (params.project)? params.project : "HolopediaLi";
+      this.currentStep = (params.project)? params.project : "QuantumFoundation";
       this.title = this.currentStep;
-      this.description = (this.currentStep == "HolopediaLi")? this.defaultDescription: "";
+      this.description = (this.currentStep == "QuantumFoundation")? this.defaultDescription: "";
     });
 
     

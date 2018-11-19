@@ -1,5 +1,13 @@
-<div class="topbar">
-  <video id="quantumneurofeedback" controls="" autoplay="" loop name="media" width="100%">
-    <source src="assets/images/quantumneurofeedbackdoctor.mp4" type="video/mp4">
-  </video>
+<div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+
+  <div class="left" fxFlex="50">
+    <img class="topbar-image" src="assets/images/GST_MUA_HOE.jpg">
+  </div>
+  <div class="right" fxFlex="50">
+      <app-flags></app-flags>
+    <div [innerHTML]="'ABSTRACT.TITLE' | translate" class="abstact_title"></div>
+    <div [innerHTML]="'ABSTRACT.CONTENT' | translate" class="abstact_content"></div>
+    <!-- <div [innerHTML]="'ABSTRACT.REFERENCES' | translate"></div> -->
+    <div [innerHTML]="'ABSTRACT.KEYWORDS' | translate"></div>
+  </div>
 </div>

@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyD8dwDXR6l2Omn0Zzo5RSmMjEn51N9OrFU",
-    authDomain: "holopediali-722c8.firebaseapp.com",
-    databaseURL: "https://holopediali-722c8.firebaseio.com",
-    projectId: "holopediali-722c8",
-    storageBucket: "holopediali-722c8.appspot.com",
-    messagingSenderId: "143803173878"
+    apiKey: "AIzaSyDJuklKJm3KS6Y2En0ob-2_tjYvrYxdzMw",
+    authDomain: "quantumfoundation-d6776.firebaseapp.com",
+    databaseURL: "https://quantumfoundation-d6776.firebaseio.com",
+    projectId: "quantumfoundation-d6776",
+    storageBucket: "",
+    messagingSenderId: "542623342280"
   }
 };

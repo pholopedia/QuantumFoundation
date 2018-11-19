@@ -29,6 +29,17 @@ import { CategoriesComponent } from './components/elements/categories/categories
 import { HologramsListComponent } from './components/elements/holograms-list/holograms-list.component';
 import { AddHologramComponent } from './components/elements/add-hologram/add-hologram.component';
 
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FlagsComponent } from './components/elements/flags/flags.component';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/translations/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +51,8 @@ import { AddHologramComponent } from './components/elements/add-hologram/add-hol
     SocialComponent,
     ProjectsComponent,
     GamesComponent,
-    ProjectStarComponent,
+    ProjectStarComponent,    
+    FlagsComponent,
     SafePipe,
     HologramComponent,
     CategoriesComponent,
@@ -50,7 +62,9 @@ import { AddHologramComponent } from './components/elements/add-hologram/add-hol
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule,    
+    HttpModule,
+    HttpClientModule,
     FlexLayoutModule,
     EmbedVideo.forRoot(),
     FacebookModule.forRoot(),
@@ -58,7 +72,14 @@ import { AddHologramComponent } from './components/elements/add-hologram/add-hol
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
