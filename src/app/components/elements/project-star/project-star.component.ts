@@ -18,18 +18,35 @@ export class ProjectStarComponent implements OnInit {
   <br> HoloEducation HoloEmulation
   <br> HoloResearch`
 
+
+  holoPRUrl: string = "https://quantumfunds.files.wordpress.com/2018/04/qpr.png";
+
+  obverseArray = [
+    { "url": "https://quantumfunds.files.wordpress.com/2018/08/fqk.png", "color": "#FFCBFF" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/04/qhqd.png", "color": "#CAC3F5" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/08/fqt.png", "color": "#F9CCD7" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/08/qhqm.png", "color": "#F1E6CD" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/08/fqa.png", "color": "#C6F0F0" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/04/qhqr.png", "color": "#F9C4A4" },
+    { "url": "https://quantumfunds.files.wordpress.com/2018/08/fqv.png", "color": "#F7F5BF" }
+  ]
+
+  getObverseUrl(fileName) {
+    return `https://quantumfunds.files.wordpress.com/2018/${fileName}.png`;
+  }
+
   coins: CoinSettings[] = [
-    new CoinSettings(["Research"], { theme:  "purple" }, [], { url: this.getFctcoinUrl(".2") }),
-    new CoinSettings(["Education", "Emulation"], { theme: "indigo" }, [], { url: this.getFctcoinUrl(".5") }),
-    new CoinSettings(["Medicine"], { theme: "red" }, [], { url: this.getFctcoinUrl("10") }),
-    new CoinSettings(["Holo Master"], { theme: "beige" }, [], { url: "https://quantumfunds.files.wordpress.com/2018/11/factom.png" }),
-    new CoinSettings(["Technology", "Therapies", "Tunnels", "Tomography"], { theme: "turquoise" }, [], { url: this.getFctcoinUrl("1") }),
-    new CoinSettings(["Artificial Intelligence", "Applications", "Algorithm"], { theme: "orange" }, [], { url: this.getFctcoinUrl("5") }),
-    new CoinSettings(["Smart", "Sustainability", "Systems", "Simulations"], { theme: "olive" }, [], { url: this.getFctcoinUrl("2") }),
+    new CoinSettings([], { url: this.getObverseUrl("08/fqk") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("04/qhqd") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("08/fqt") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("08/qhqm") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("08/fqa") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("04/qhqr") }, [], { url: this.holoPRUrl }),
+    new CoinSettings([], { url: this.getObverseUrl("08/fqv") }, [], { url: this.holoPRUrl }),
   ]
 
   projects = [
-    {name: "Put in Your Hologram for Holopedia Li",   style: { top: "20px",   left: "50%",                transform: "translateX(-50%)"}},
+    {name: "Put in Your Media for Quantum Foundation",   style: { top: "20px",   left: "50%",                transform: "translateX(-50%)"}},
     {name: "Medicine",                                style: { top: "64px",   left: "calc(50% - 97px)",   transform: "translateX(-100%)"}},
     {name: "Artificial Intelligence",                 style: { top: "123px",  left: "calc(50% - 190px)",  transform: "translateX(-100%)"}},
     {name: "Applications",                            style: { top: "216px",  left: "calc(50% - 246px)",  transform: "translateX(-100%)"}},
@@ -68,8 +85,9 @@ export class ProjectStarComponent implements OnInit {
       this.description = (this.currentStep == "QuantumFoundation")? this.defaultDescription: "";
     });
 
+    this.starBgUrl = `assets/images/12star8frameQF.png`;
     
-    setInterval(x => this.iterateStarBg(), 810);
+    // setInterval(x => this.iterateStarBg(), 810);
   }
 
   iterateStarBg() {
@@ -95,7 +113,7 @@ export class ProjectStarComponent implements OnInit {
   }
 
   selectProject(project) {
-    if (project.name != "Put in Your Hologram for Holopedia Li") {
+    if (project.name != "Put in Your Media for Quantum Foundation") {
       this.router.navigate(['/hologram'], { queryParams: {'project': project.name} });
     } else {
       this.router.navigate(['/hologram']);
