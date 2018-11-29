@@ -30,8 +30,7 @@ body {
     /*border-left: 10px solid #900;
     border-right: 10px solid #900; */
     margin: 0;
-    overflow: hidden;	
-
+    color: #f7d878;
 }
 
 canvas {
@@ -59,38 +58,12 @@ canvas {
 	transform: rotateY(-12deg);
 }
 
-.header {
-	padding:5px 20px;
-	position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-	margin-top: 12px;
-	box-shadow: 0 10px 40px #000;
-    border-radius: 12px;
-	border: 2px solid rgba(0,0,0,0.26);
-}
 
-h1 {
-	text-align: left;
-    color: #f7d878;
-    font-size: 50px;
-    margin: 0 0 0 10px;
-}
-
-.headerText{
-	float:left;
-}
 
 .siteTitle {
 	text-shadow: 3px 3px 4px #5a4504;
 }
 
-h2 {
-text-align: center;
-    font-size: 42px;
-    color: #f7d878;
-    margin: 48px 0 24px 0;
-}
 
 .helper {
 	display: inline-block;
