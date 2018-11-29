@@ -100,7 +100,7 @@ var init = function () {
     // }, false);
 
     setTimeout(function () {
-        document.body.addClassName('ready');
+        document.body.classList.add('ready');
     }, 0);
 
 };
