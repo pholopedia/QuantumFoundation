@@ -1,5 +1,13 @@
-<section class="container">
-  <div id="carousel">
-    <figure *ngFor="let hex of hexes"><a href="{{hex.link}}" target="_blank"><div class="hexdiv"><img src="assets/images/hexes/{{hex.website}}-presents.{{(hex.extension)?hex.extension:'png'}}" /></div><div class="subdiv">{{hex.text}}</div></a></figure>
-  </div> 
-</section>
+<div class="footer-wrapper">
+  <div class="carousel-wrapper">
+    <section class="container">
+      <div id="carousel">
+        <figure *ngFor="let hex of hexes"><a href="{{hex.link}}" target="_blank">
+            <div class="hexdiv"><img src="assets/images/hexes/{{hex.website}}-presents.{{(hex.extension)?hex.extension:'png'}}" /></div>
+            <div class="subdiv">{{hex.text}}</div>
+          </a></figure>
+      </div>
+    </section>
+  </div>
+  <h1>Quantum Portal</h1>
+</div>
