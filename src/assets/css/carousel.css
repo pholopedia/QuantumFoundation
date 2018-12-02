@@ -154,14 +154,14 @@ canvas {
 	
 	.ready #carousel-outer {
     transform-style: preserve-3d;
-     animation: rotating 4s linear infinite reverse; 
-     animation-play-state: paused;
+    animation: rotating 8s linear infinite ;
+    animation-play-state: paused;
   }
 	
 	.ready #carousel-outerer {
     transform-style: preserve-3d;
-     animation: rotating 8s linear infinite ; 
-     animation-play-state: paused;
+    animation: rotating 4s linear infinite reverse; 
+    animation-play-state: paused;
   }
 
   .ready #carousel {
