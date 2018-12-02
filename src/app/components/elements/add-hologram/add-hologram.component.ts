@@ -24,17 +24,19 @@ export class AddHologramComponent implements OnInit {
     });
   }
   addHologram() {
-    var item: Hologram = {
-      id: "sampleid",
-      url: this.hologramUrl.replace("watch?v=", "embed/"),
-      title: "sample title",
-      source: "YouTube",
-      project: this.projectName,
+    if (this.hologramUrl) {
+      var item: Hologram = {
+        id: "sampleid",
+        url: this.hologramUrl.replace("watch?v=", "embed/"),
+        title: "sample title",
+        source: "YouTube",
+        project: this.projectName,
+      }
+    
+      this.hologramsService.add(item).then((doc: Hologram) => {
+          item.id = doc.id;
+          this.hologramsService.update(item);
+      });
     }
-
-    this.hologramsService.add(item).then((doc: Hologram) => {
-        item.id = doc.id;
-        this.hologramsService.update(item);
-    });
   }
 }

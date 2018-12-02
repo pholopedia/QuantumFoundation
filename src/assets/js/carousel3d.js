@@ -77,7 +77,7 @@ var init = function () {
 
 
     // populate on startup
-    carousel.panelCount = 10; // parseInt(panelCountInput.value, 10);
+    carousel.panelCount = 11; // parseInt(panelCountInput.value, 10);
     carousel.modify();
 
 

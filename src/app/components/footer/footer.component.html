@@ -1,14 +1,12 @@
 <div class="footer-wrapper">
   <div class="carousel-wrapper">
-    <div class="carousel-buttons">
-      <div class="carousel-button left-button" (mouseenter)="spinRight(true)" (mouseleave)="spinRight(false)"></div>
-      <div class="carousel-button right-button" (mouseenter)="spinLeft(true)" (mouseleave)="spinLeft(false)"></div>
-    </div>
+    <div class="carousel-button left-button" (mouseenter)="spinRight(true)" (mouseleave)="spinRight(false)"></div>
+    <div class="carousel-button right-button" (mouseenter)="spinLeft(true)" (mouseleave)="spinLeft(false)"></div>
     <section class="container">
       <div id="carousel-outerer">
         <div id="carousel-outer">
           <div id="carousel">
-            <figure *ngFor="let hex of hexes"><a href="{{hex.link}}" target="_blank">
+            <figure *ngFor="let hex of hexes" [attr.website]="hex.website"><a href="{{hex.link}}" target="_blank">
                 <div class="hexdiv"><img src="assets/images/hexes/{{hex.website}}-presents.{{(hex.extension)?hex.extension:'png'}}" /></div>
                 <div class="subdiv">{{hex.text}}</div>
               </a></figure>
