@@ -55,7 +55,7 @@ Carousel3D.prototype.modify = function () {
 Carousel3D.prototype.transform = function () {
     // push the carousel back in 3D space,
     // and rotate it
-    this.element.style[transformProp] = 'translateZ(-' + this.radius + 'px) ' + this.rotateFn + '(' + this.rotation + 'deg)';
+    // this.element.style[transformProp] = 'translateZ(-' + this.radius + 'px) ' + this.rotateFn + '(' + this.rotation + 'deg)';
 };
 
 

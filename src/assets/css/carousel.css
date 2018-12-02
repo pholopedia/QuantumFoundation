@@ -84,7 +84,6 @@ canvas {
          -moz-perspective: 1100px;
            -o-perspective: 1100px;
               perspective: 1100px;
-	  transform: scale(0.6); 
     }
 
     #carousel {
@@ -110,6 +109,7 @@ canvas {
            -o-backface-visibility: hidden;
               backface-visibility: hidden;
     }
+
 	
 	#mainPortal {
       width: 212px;
@@ -152,13 +152,49 @@ canvas {
               transition: opacity 1s, transform 1s;
     }
 	
-	.ready #carousel {
-	  -webkit-animation: rotating 16s linear infinite;
-	  -moz-animation: rotating 16s linear infinite;
-	  -ms-animation: rotating 16s linear infinite;
-	  -o-animation: rotating 16s linear infinite;
-	  animation: rotating 16s linear infinite;
-	}
+	.ready #carousel-outer {
+    transform-style: preserve-3d;
+     animation: rotating 4s linear infinite reverse; 
+     animation-play-state: paused;
+  }
+	
+	.ready #carousel-outerer {
+    transform-style: preserve-3d;
+     animation: rotating 8s linear infinite ; 
+     animation-play-state: paused;
+  }
+
+  .ready #carousel {
+	   animation: rotating 16s linear infinite; 
+  }
+
+	.ready #carousel:hover {
+    animation-play-state: paused;
+  }
+
+  .carousel-wrapper {
+    height: 260px;
+    position: relative;
+  }
+  
+  .carousel-buttons {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .carousel-button {
+    width: 30%;
+    height: 300px;
+  }
+
+  .carousel-button.left-button {
+    float: left;
+  }
+
+  .carousel-button.right-button {
+    float: right;
+  }
 	
 	@keyframes rotating {
 	  from {
