@@ -4,18 +4,31 @@
   <div class="navigation" fxFlex="40" fxFlex.lt-md="100">
     <app-coin [coinObverse]="getHexSide(coin.ObverseSettings, '91%')" [coinReverse]="getHexSide(coin.ReverseSettings, '91%')"
       [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="coin.ObverseText"></app-coin>
+    <img src="assets/images/Gyromagnetic_Nuclei_Precession.png"
+      alt="" class="gyromagnetic-spin">
+      <p>When gyromagnetic ratio is negative, it means that the spin and magnetic moment point in the opposite
+        direcitons.</p>
   </div>
   <div class="navigation" fxFlex="60" fxFlex.lt-md="100">
+    <p>Gyromagnetic ratio of a particle or system is the ratio of its magnetic moment to its angular momentum. </p>
+    <p>It is denoted by gamma γ [rad / s*T] or γ / 2π [MHz / T]</p>
     <div class="magnetic-field-input">
-        <span>Magnetic Field: </span><input type="number" [(ngModel)]="magneticFieldValue" step="0.1"/><span> [ T ]</span>
+      <span>Magnetic Field: </span><input type="number" [(ngModel)]="magneticFieldValue" step="0.1" /><span> [ T ]</span>
     </div>
     <table class="nmrElementsTable">
-      <tr><th>Element</th><th>MHz / T</th><th>MHz</th></tr>
+      <tr>
+        <th>Element</th>
+        <th>Spin [1]</th>
+        <th>MHz / T</th>
+        <th>MHz at {{magneticFieldValue}} T</th>
+      </tr>
       <tr *ngFor="let element of elements">
         <td [innerHTML]="element.Element"></td>
+        <td [innerHTML]="element.spin"></td>
         <td [innerHTML]="element.MHzT"></td>
         <td [innerHTML]="element.MHzT * magneticFieldValue | number:'0.0-10'"></td>
       </tr>
     </table>
+    <p>[1] N.J.Stone, "<a href="https://www.psi.ch/low-energy-muons/DocumentsEN/nuclear-moments.pdf" target="_blank">Table of Nuclear Magnetic Dipole and Electric Quadrupole Moments</a>", Atomic Data and Nuclear Data Tables, 2005</p>
   </div>
 </div>
