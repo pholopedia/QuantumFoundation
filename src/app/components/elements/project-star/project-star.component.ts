@@ -30,19 +30,19 @@ export class ProjectStarComponent implements OnInit {
     { "url": "https://quantumfunds.files.wordpress.com/2018/04/qhqr.png", "color": "#F9C4A4" },
     { "url": "https://quantumfunds.files.wordpress.com/2018/08/fqv.png", "color": "#F7F5BF" }
   ]
-
+  
   getObverseUrl(fileName) {
     return `https://quantumfunds.files.wordpress.com/2018/${fileName}.png`;
   }
 
   coins: CoinSettings[] = [
-    new CoinSettings([], { url: this.getObverseUrl("08/fqk") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("04/qhqd") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("08/fqt") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("08/qhqm") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("08/fqa") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("04/qhqr") }, [], { url: this.holoPRUrl }),
-    new CoinSettings([], { url: this.getObverseUrl("08/fqv") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("08/fqk") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("04/qhqd") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("08/fqt") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("qdevices", [], { url: this.getObverseUrl("12/qdevices") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("08/fqa") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("04/qhqr") }, [], { url: this.holoPRUrl }),
+    new CoinSettings("", [], { url: this.getObverseUrl("08/fqv") }, [], { url: this.holoPRUrl }),
   ]
 
   projects = [
@@ -109,7 +109,11 @@ export class ProjectStarComponent implements OnInit {
     }
   }
 
-  selectHex(obverse, event: MouseEvent) {
+  selectHex(coin: CoinSettings) {
+    if (coin.Name) {
+      this.router.navigate([coin.Name]);
+      console.log(coin.Name)
+    }
   }
 
   selectProject(project) {

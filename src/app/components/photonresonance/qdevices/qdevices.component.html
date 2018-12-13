@@ -1,0 +1,21 @@
+<h1>Nuclear Magnetic Resonance</h1>
+
+<div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+  <div class="navigation" fxFlex="40" fxFlex.lt-md="100">
+    <app-coin [coinObverse]="getHexSide(coin.ObverseSettings, '91%')" [coinReverse]="getHexSide(coin.ReverseSettings, '91%')"
+      [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="coin.ObverseText"></app-coin>
+  </div>
+  <div class="navigation" fxFlex="60" fxFlex.lt-md="100">
+    <div class="magnetic-field-input">
+        <span>Magnetic Field: </span><input type="number" [(ngModel)]="magneticFieldValue" step="0.1"/><span> [ T ]</span>
+    </div>
+    <table class="nmrElementsTable">
+      <tr><th>Element</th><th>MHz / T</th><th>MHz</th></tr>
+      <tr *ngFor="let element of elements">
+        <td [innerHTML]="element.Element"></td>
+        <td [innerHTML]="element.MHzT"></td>
+        <td [innerHTML]="element.MHzT * magneticFieldValue | number:'0.0-10'"></td>
+      </tr>
+    </table>
+  </div>
+</div>

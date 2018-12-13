@@ -35,6 +35,7 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FlagsComponent } from './components/elements/flags/flags.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { QdevicesComponent } from './components/photonresonance/qdevices/qdevices.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -60,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HologramsListComponent,
     AddHologramComponent,
     FooterComponent,
+    QdevicesComponent,
   ],
   imports: [
     BrowserModule,

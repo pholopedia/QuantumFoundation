@@ -5,7 +5,7 @@
   </div>
   <div class="holoMandala" [ngStyle]="{'background-image': 'url(' + starBgUrl + ')'}">
     <app-coin *ngFor="let coin of coins" [coinObverse]="getHexSide(coin.ObverseSettings, '91%')" [coinReverse]="getHexSide(coin.ReverseSettings, '91%')"
-      [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="coin.ObverseText" (click)="selectHex(obverse, $event)"></app-coin>
+      [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="coin.ObverseText" (click)="selectHex(coin)"></app-coin>
   </div>
   <div class="holoMandalaCaption">
 
