@@ -17,6 +17,7 @@ import { EmbedVideo } from 'ngx-embed-video/dist';
 import { ProjectStarComponent } from './components/elements/project-star/project-star.component';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -84,6 +85,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    YoutubePlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
