@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TopbarComponent implements OnInit {
 
-    private player;
+    private players = [];
 
   constructor(
     translate: TranslateService,
@@ -23,15 +23,15 @@ export class TopbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  savePlayer(player) {
-    this.player = player;
-    this.player.playVideo();
-    this.player.setVolume(10);
+  savePlayer(player, id) {
+    this.players.push({player: player, id: id});
+    player.playVideo();
+    player.setVolume(10);
   }
 
-  onStateChange(event) {
+  onStateChange(event, id) {
       if(event.data === YT.PlayerState.ENDED){
-        this.player.seekTo(0);
+        this.players.find(player => player.id == id).player.seekTo(0);
     }
   }
 

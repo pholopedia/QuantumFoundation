@@ -1,17 +1,17 @@
 <div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
 
-  <div class="left" fxFlex="40">
-    <div class="aspect-ratio">
-        <youtube-player [videoId]="'TIY4vuHCtsY'" (ready)="savePlayer($event)" (change)="onStateChange($event)" width="100%"
-        height="100%"></youtube-player>
+    <div class="left" fxFlex="50">
+        <div class="aspect-ratio">
+            <youtube-player [videoId]="'TIY4vuHCtsY'" (ready)="savePlayer($event, 'TIY4vuHCtsY')" (change)="onStateChange($event, 'TIY4vuHCtsY')"
+                width="100%" height="100%"></youtube-player>
+        </div>
+        <img class="topbar-image" src="assets/images/GST_MUA_HOE.jpg">
     </div>
-    <img class="topbar-image" src="assets/images/GST_MUA_HOE.jpg">
-  </div>
-  <div class="right" fxFlex="60">
-    <app-flags></app-flags>
-    <div [innerHTML]="'ABSTRACT.TITLE' | translate" class="abstact_title"></div>
-    <div [innerHTML]="'ABSTRACT.CONTENT' | translate" class="abstact_content"></div>
-    <!-- <div [innerHTML]="'ABSTRACT.REFERENCES' | translate"></div> -->
-    <div [innerHTML]="'ABSTRACT.KEYWORDS' | translate"></div>
-  </div>
+    <div class="right" fxFlex="50">
+        <app-flags></app-flags>
+        <div [innerHTML]="'ABSTRACT.TITLE' | translate" class="abstact_title"></div>
+        <div [innerHTML]="'ABSTRACT.CONTENT' | translate" class="abstact_content"></div>
+        <!-- <div [innerHTML]="'ABSTRACT.REFERENCES' | translate"></div> -->
+        <div [innerHTML]="'ABSTRACT.KEYWORDS' | translate"></div>
+    </div>
 </div>
